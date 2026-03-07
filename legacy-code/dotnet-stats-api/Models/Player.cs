@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -43,10 +44,14 @@ namespace PlayerStatsAPI.Models
 
         public DateTime? LastActiveAt { get; set; }
 
+        // Navigation property for match history
+        public virtual ICollection<MatchHistory> MatchHistories { get; set; }
+
         public Player()
         {
             CreatedAt = DateTime.UtcNow;
             EloRating = 1000;
+            MatchHistories = new List<MatchHistory>();
         }
     }
 }
