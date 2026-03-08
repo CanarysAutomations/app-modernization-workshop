@@ -1,0 +1,42 @@
+.header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header h1 {
+  margin-bottom: 0.5rem;
+}
+
+.header nav {
+  display: flex;
+  gap: 2rem;
+  margin-top: 0.5rem;
+}
+
+.header nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.header nav a:hover,
+.header nav a.active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+main {
+  min-height: calc(100vh - 200px);
+  padding: 2rem 0;
+}
+
+.footer {
+  background: #333;
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
+  margin-top: 2rem;
+}

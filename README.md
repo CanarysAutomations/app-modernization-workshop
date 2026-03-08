@@ -42,10 +42,10 @@ By the end of this 2-hour workshop, you will:
 | # | Exercise | Duration | Difficulty | Learning Path | What You'll Learn |
 |---|----------|----------|------------|---------------|-------------------|
 | 1 | [Java Backend Modernization](./docs/exercise-1-java.md) | 30 min | ⭐⭐⭐ | Backend | Migrate Spring Boot 2.x → 3.x, add reactive patterns, R2DBC |
-| 1.1 | [Azure Deployment with CLI](./docs/exercise-1.1-java-cli.md) | 25 min | ⭐⭐⭐⭐ | Cloud (Optional) | Deploy to Azure Spring Apps using Copilot CLI, custom agents, MCP |
-| 2 | [.NET API Modernization](./docs/exercise-2-dotnet.md) | 30 min | ⭐⭐⭐ | Backend | Migrate .NET Framework → .NET 8, minimal APIs, EF Core |
-| 3 | [Angular Frontend Modernization](./docs/exercise-3-angular.md) | 20 min | ⭐⭐ | Frontend | Upgrade Angular 12 → 18, signals, standalone components |
-| 4 | [DevOps & Data Pipeline](./docs/exercise-4-devops-data.md) | 20 min | ⭐⭐⭐⭐ | DevOps/Full-Stack | Containerize apps, GitHub Actions, ETL pipeline |
+| 1.1 | [CVE Detection & Security Hardening](./docs/exercise-1.1-java-cli.md) | 30 min | ⭐⭐⭐⭐ | Security  | Fix CVEs, harden security using Copilot CLI, custom agents, MCP tools |
+| 2 | [.NET API Modernization](./docs/exercise-2-dotnet.md) | 20 min | ⭐⭐ | Backend | Migrate .NET Framework → .NET 8 with custom skill, minimal APIs, EF Core |
+| 3 | [Angular Frontend Modernization](./docs/exercise-3-angular.md) | 20 min | ⭐⭐ | Frontend | Upgrade Angular 12 → 18 with custom instructions, signals, standalone components |
+| 4 | [DevOps & Data Pipeline](./docs/exercise-4-devops-data.md) | 20 min | ⭐⭐⭐⭐ | DevOps/Full-Stack | Containerize apps with custom skill, GitHub Actions CI/CD, Python ETL pipeline |
 
 
 

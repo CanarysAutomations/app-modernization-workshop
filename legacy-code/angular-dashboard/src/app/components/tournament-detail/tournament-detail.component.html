@@ -1,0 +1,64 @@
+<div class="tournament-detail" *ngIf="!loading">
+  <div class="detail-card" *ngIf="tournament">
+    <div class="tournament-header">
+      <h2>{{ tournament.name }}</h2>
+      <span class="badge" [ngClass]="getStatusClass()">
+        {{ tournament.status }}
+      </span>
+    </div>
+
+    <div class="tournament-info">
+      <div class="info-item">
+        <label>Game:</label>
+        <span>{{ tournament.game }}</span>
+      </div>
+
+      <div class="info-item">
+        <label>Participants:</label>
+        <span>{{ tournament.participants }}/{{ tournament.maxParticipants }}</span>
+      </div>
+
+      <div class="info-item">
+        <label>Prize Pool:</label>
+        <span>${{ tournament.prizePool | number }}</span>
+      </div>
+
+      <div class="info-item">
+        <label>Start Date:</label>
+        <span>{{ tournament.startDate | date:'medium' }}</span>
+      </div>
+
+      <div class="info-item" *ngIf="tournament.endDate">
+        <label>End Date:</label>
+        <span>{{ tournament.endDate | date:'medium' }}</span>
+      </div>
+
+      <div class="info-item">
+        <label>Registration Progress:</label>
+        <div class="progress-container">
+          <div class="progress-bar">
+            <div class="progress-fill" 
+                 [style.width.%]="(tournament.participants / tournament.maxParticipants) * 100">
+            </div>
+          </div>
+          <span class="progress-text">
+            {{ ((tournament.participants / tournament.maxParticipants) * 100) | number:'1.0-0' }}%
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="btn btn-primary">View Bracket</button>
+      <button class="btn btn-secondary">View Standings</button>
+    </div>
+  </div>
+
+  <div class="empty-state" *ngIf="!tournament">
+    <p>Tournament not found</p>
+  </div>
+</div>
+
+<div class="loading" *ngIf="loading">
+  <p>Loading tournament details...</p>
+</div>

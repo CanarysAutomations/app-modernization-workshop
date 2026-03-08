@@ -4,453 +4,154 @@
 **Difficulty**: ⭐⭐ Intermediate  
 **Prerequisites**: Node.js 20+, npm 10+, GitHub Copilot enabled
 
-## 🎮 The Challenge
+## The Challenge
 
 The **Tournament Dashboard** is the primary interface for tournament organizers and players. Built with **Angular 12** in 2021, it's missing modern features:
 
-- 🐌 ChangeDetectionStrategy OnPush not used consistently
-- 📦 NgModules everywhere (not standalone)
-- 🔧 No signals for reactivity
-- 🚫 Missing server-side rendering (SSR)
-- ⚠️ Deprecated RxJS patterns
+- NgModules everywhere (not standalone)
+- RxJS BehaviorSubject instead of signals
+- Old template syntax (*ngIf, *ngFor)
+- Missing modern Angular 18 features
 
-Your mission: **Upgrade to Angular 18 with standalone components, signals, and modern architecture.**
+Your mission: **Create custom Copilot instructions, then use one prompt to upgrade to Angular 18 with standalone components, signals, and modern architecture.**
 
-## 📋 What You'll Learn
+## Prerequisites Check
 
-- ✅ Upgrade Angular 12 → 18 using Angular CLI
-- ✅ Convert NgModules to standalone components
-- ✅ Implement signals for state management
-- ✅ Add server-side rendering (SSR)
-- ✅ Modernize routing and lazy loading
-- ✅ Use GitHub Copilot for Angular migrations
+Verify you have:
+- Node.js 20+ and npm 10+ installed
+- Angular CLI: `npm install -g @angular/cli@18`
+- GitHub Copilot extension enabled in VS Code
 
-## 🏗️ Architecture Overview
-
-**Before (Legacy):**
-```
-Angular 12
-├── NgModule-based architecture
-├── Zone.js change detection
-├── RxJS for all state
-└── Client-side rendering only
-```
-
-**After (Modernized):**
-```
-Angular 18
-├── Standalone components
-├── Signals for reactivity
-├── Zoneless change detection
-└── Server-side rendering (SSR)
-```
-
-## 🚀 Step-by-Step Guide
-
-### Step 1: Analyze Legacy Code (3 minutes)
-
-1. Navigate to the legacy code:
+Check Angular version in legacy project:
 ```bash
 cd legacy-code/angular-dashboard
-```
-
-2. Check Angular version:
-```bash
 cat package.json | grep "@angular/core"
 # Should show: "^12.2.0"
 ```
 
-3. **Use GitHub Copilot for analysis:**
+## Two-Step Modernization
 
-Open Copilot Chat:
+### Step 1: Create Custom Instructions (5 minutes)
+
+1. **Create the instruction file from copilot chat settings:**
+
+![Instructions & Rules menu](Assets/instructions.png)
+
+
+
+2. **Create `.github/instructions/angular-modernization.instructions.md` and paste this content:**
+
+   ```markdown
+   ---
+   description: Angular 12 to Angular 18 modernization instructions for standalone components, signals, and modern template syntax
+   applyTo: '**/*.{ts,html,css,json}'
+   ---
+
+   # Angular Modernization Instructions
+
+   Provide guidance for modernizing this Angular 12 application to Angular 18 with standalone components, signals, and modern patterns.
+
+   ## Modernization Workflow
+
+   When asked to modernize this Angular application, follow this sequence:
+
+   ### 1. Update Dependencies (Incremental Approach)
+   **CRITICAL:** Angular requires incremental major version updates: 12→13→14→15→16→17→18. Direct upgrade will fail.
+
+   **Option A:** Run `ng update` incrementally for each major version (recommended for production)
+   **Option B:** Directly update package.json to Angular 18 + TypeScript ~5.4.0 + RxJS ~7.8.0 + zone.js ~0.14.0 (for learning/demo, use `npm install --force`)
+
+   ### 2. Convert to Standalone Architecture
+   - Delete `app.module.ts` completely
+   - Update `main.ts` to use `bootstrapApplication()` with `provideRouter()` and `provideHttpClient()`
+   - Create `app.routes.ts` with Routes array
+   - Convert all components: add `standalone: true`, add `imports` array (CommonModule, RouterLink, RouterOutlet), remove @NgModule declarations
+
+   ### 3. Implement Signals (Angular 16+)
+   **State Management:**
+   - Replace `BehaviorSubject` with `signal()`, use `computed()` for derived state from signals only
+   - HTTP calls still return Observables - use `toSignal()` to convert, keep Observables for streams/timers/events
+   - Use `takeUntilDestroyed()` instead of manual unsubscribe
+
+   **Signal APIs (Angular 17+):**
+   - Inputs: `input()`, `input.required()` replace @Input decorators
+   - Outputs: `output<T>()` replaces @Output decorators
+   - Two-way binding: `model<T>()` replaces [(ngModel)]
+   - Queries: `viewChild()`, `viewChildren()`, `contentChild()`, `contentChildren()` replace @ViewChild/@ContentChild decorators
+   - Side effects: `effect()` for signal reactions
+   - Lifecycle: `inject(DestroyRef).onDestroy()` replaces ngOnDestroy
+
+   ### 4. Modernize Template Syntax (Angular 17+)
+   - Replace `*ngIf` with `@if`/`@else`
+   - Replace `*ngFor` with `@for` (use `track` expressions, add `@empty` block)
+   - Replace `[ngSwitch]` with `@switch`/`@case`/`@default`
+   - Use `@defer` with `@placeholder`/`@loading`/`@error` for lazy loading
+   - Remove `async` pipe where signals are used
+
+   ### 5. Apply Modern Best Practices
+   - Use `inject()` function instead of constructor dependency injection
+   - Add `ChangeDetectionStrategy.OnPush` to all components
+   - Remove unused imports and lifecycle hooks
+   - Ensure all paths and imports are correct after restructuring
+
+   ## Success Criteria
+   - All `@angular/*` packages are version 18
+   - No `app.module.ts` or `@NgModule` declarations exist
+   - All components have `standalone: true`
+   - `main.ts` uses `bootstrapApplication()`
+   - All services use `signal()` instead of `BehaviorSubject`
+   - All templates use `@if` and `@for` instead of `*ngIf` and `*ngFor`
+   - Components use `inject()` instead of constructor injection
+   - Application builds successfully: `npm run build`
+   - Application runs correctly: `npm start`
+   ```
+
+
+
+### Step 2: Use Prompt to Modernize (1 minute)
+
+**Open Copilot Chat** (Ctrl+Shift+I / Cmd+Shift+I) and use this prompt:
+
 ```
-@workspace Analyze this Angular project and list deprecated patterns that need updating for Angular 18
+@workspace Modernize this Angular 12 Tournament Dashboard to Angular 18. convert NgModules to standalone components, replace BehaviorSubject with signals, update template syntax to @if/@for, and use modern Angular 18 patterns throughout.
 ```
 
-Expected findings:
-- [ ] NgModules should be converted to standalone
-- [ ] RxJS BehaviorSubject can be replaced with signals
-- [ ] RouterModule needs updating
-- [ ] Missing SSR configuration
+### Step 3: Install Dependencies (2 minutes)
 
-### Step 2: Upgrade Angular CLI (2 minutes)
-
-1. **Update Angular CLI globally:**
-
-```bash
-npm install -g @angular/cli@18
-ng version
-```
-
-2. **Run Angular Update:**
+**Navigate to the project and install dependencies:**
 
 ```bash
 cd legacy-code/angular-dashboard
-ng update @angular/core@18 @angular/cli@18 --force
-```
-
-This will automatically:
-- Update all Angular packages to v18
-- Migrate deprecated APIs
-- Update angular.json configuration
-
-### Step 3: Convert to Standalone Components (5 minutes)
-
-**Use GitHub Copilot to automate conversion:**
-
-1. Open `app.module.ts`
-2. In Copilot Chat, ask:
-
-```
-Convert this Angular NgModule architecture to standalone components. Update app.module.ts to bootstrap a standalone component.
-```
-
-**Before (app.module.ts):**
-```typescript
-@NgModule({
-  declarations: [
-    AppComponent,
-    TournamentListComponent,
-    TournamentDetailComponent
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    RouterModule.forRoot(routes)
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
-```
-
-**After (main.ts with standalone):**
-```typescript
-import { bootstrapApplication } from '@angular/platform-browser';
-import { provideRouter } from '@angular/router';
-import { provideHttpClient } from '@angular/common/http';
-import { AppComponent } from './app/app.component';
-import { routes } from './app/app.routes';
-
-bootstrapApplication(AppComponent, {
-  providers: [
-    provideRouter(routes),
-    provideHttpClient()
-  ]
-}).catch(err => console.error(err));
-```
-
-**Update app.component.ts to standalone:**
-```typescript
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { CommonModule } from '@angular/common';
-
-@Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [CommonModule, RouterOutlet],
-  template: `
-    <header class="header">
-      <h1>🏆 Game Arena Legends</h1>
-      <nav>
-        <a routerLink="/tournaments">Tournaments</a>
-        <a routerLink="/players">Players</a>
-      </nav>
-    </header>
-    <main>
-      <router-outlet></router-outlet>
-    </main>
-  `,
-  styles: [`
-    .header {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 1rem 2rem;
-    }
-    nav a {
-      margin: 0 1rem;
-      color: white;
-      text-decoration: none;
-    }
-  `]
-})
-export class AppComponent {
-  title = 'Game Arena Dashboard';
-}
-```
-
-### Step 4: Implement Signals for State (5 minutes)
-
-Replace RxJS BehaviorSubject with Angular Signals:
-
-**Before (Legacy Service with RxJS):**
-```typescript
-@Injectable({ providedIn: 'root' })
-export class TournamentService {
-  private tournamentsSubject = new BehaviorSubject<Tournament[]>([]);
-  tournaments$ = this.tournamentsSubject.asObservable();
-
-  loadTournaments(): void {
-    this.http.get<Tournament[]>('/api/tournaments')
-      .subscribe(data => this.tournamentsSubject.next(data));
-  }
-}
-```
-
-**After (Modern with Signals):**
-
-Ask Copilot:
-```
-Convert this service to use Angular signals instead of RxJS BehaviorSubject
-```
-
-```typescript
-import { Injectable, signal, computed } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { toSignal } from '@angular/core/rxjs-interop';
-
-@Injectable({ providedIn: 'root' })
-export class TournamentService {
-  private http = inject(HttpClient);
-  
-  // Signal-based state
-  tournaments = signal<Tournament[]>([]);
-  
-  // Computed values
-  upcomingTournaments = computed(() => 
-    this.tournaments().filter(t => t.status === 'UPCOMING')
-  );
-  
-  activeTournaments = computed(() => 
-    this.tournaments().filter(t => t.status === 'IN_PROGRESS')
-  );
-
-  async loadTournaments(): Promise<void> {
-    const data = await firstValueFrom(
-      this.http.get<Tournament[]>('/api/tournaments')
-    );
-    this.tournaments.set(data);
-  }
-  
-  // Or use toSignal for reactive streams
-  tournaments$ = toSignal(
-    this.http.get<Tournament[]>('/api/tournaments'),
-    { initialValue: [] }
-  );
-}
-```
-
-**Update component to use signals:**
-```typescript
-import { Component, inject, OnInit, signal, computed } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { TournamentService } from './services/tournament.service';
-
-@Component({
-  selector: 'app-tournament-list',
-  standalone: true,
-  imports: [CommonModule],
-  template: `
-    <div class="tournaments">
-      <h2>Tournaments ({{ tournaments().length }})</h2>
-      
-      <div class="filters">
-        <button (click)="filterStatus.set('ALL')">All</button>
-        <button (click)="filterStatus.set('UPCOMING')">Upcoming</button>
-        <button (click)="filterStatus.set('IN_PROGRESS')">Active</button>
-      </div>
-
-      <div class="tournament-grid">
-        @for (tournament of filteredTournaments(); track tournament.id) {
-          <div class="tournament-card">
-            <h3>{{ tournament.name }}</h3>
-            <p>{{ tournament.game }}</p>
-            <span class="status">{{ tournament.status }}</span>
-          </div>
-        }
-      </div>
-    </div>
-  `,
-  styles: [`
-    .tournaments { padding: 2rem; }
-    .tournament-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1rem;
-    }
-    .tournament-card {
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 1rem;
-      transition: transform 0.2s;
-    }
-    .tournament-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-  `]
-})
-export class TournamentListComponent implements OnInit {
-  private tournamentService = inject(TournamentService);
-  
-  tournaments = this.tournamentService.tournaments;
-  filterStatus = signal<string>('ALL');
-  
-  // Computed signal for filtered tournaments
-  filteredTournaments = computed(() => {
-    const filter = this.filterStatus();
-    if (filter === 'ALL') return this.tournaments();
-    return this.tournaments().filter(t => t.status === filter);
-  });
-
-  async ngOnInit(): Promise<void> {
-    await this.tournamentService.loadTournaments();
-  }
-}
-```
-
-### Step 5: Add Server-Side Rendering (3 minutes)
-
-Enable SSR for better performance and SEO:
-
-```bash
-ng add @angular/ssr
-```
-
-This automatically:
-- Adds server configuration
-- Updates angular.json
-- Creates server.ts
-
-**Build and run with SSR:**
-```bash
-npm run build:ssr
-npm run serve:ssr
-```
-
-### Step 6: Modern Control Flow (@if, @for) (2 minutes)
-
-Angular 18 introduces new template syntax:
-
-**Before (Legacy):**
-```html
-<div *ngIf="tournaments$ | async as tournaments">
-  <div *ngFor="let tournament of tournaments">
-    {{ tournament.name }}
-  </div>
-</div>
-```
-
-**After (Modern):**
-```html
-@if (tournaments(); as tourns) {
-  @for (tournament of tourns; track tournament.id) {
-    <div>{{ tournament.name }}</div>
-  }
-} @else {
-  <p>Loading tournaments...</p>
-}
-```
-
-Use Copilot to auto-convert:
-```
-@workspace Replace all *ngIf and *ngFor with @if and @for syntax across the project
-```
-
-## ✅ Success Criteria
-
-Your modernization is complete when:
-
-- [ ] Angular 18 is running successfully
-- [ ] All components are standalone
-- [ ] Signals are used for state management
-- [ ] @if and @for control flow is implemented
-- [ ] SSR builds and runs without errors
-- [ ] Application loads faster (<2s LCP)
-- [ ] No NgModule imports remain
-
-## 🎯 Validation Commands
-
-```bash
-# Check Angular version
-ng version
-
-# Build for production
-ng build --configuration production
-
-# Build with SSR
-npm run build:ssr
-
-# Run development server
-ng serve
-
-# Run with SSR
-npm run serve:ssr
-
-# Lint
-ng lint
-
-# Test
-ng test
-```
-
-## 🐛 Troubleshooting
-
-### Issue 1: Module not found after upgrade
-**Solution**: Clear cache and reinstall
-```bash
-rm -rf node_modules package-lock.json
 npm install
 ```
 
-### Issue 2: SSR hydration errors
-**Solution**: Ensure all components are SSR-compatible
-```typescript
-// Use isPlatformBrowser check
-if (isPlatformBrowser(this.platformId)) {
-  // Browser-only code
-}
-```
+### Step 4: Verify Results (10 minutes)
 
-### Issue 3: Signals not updating
-**Solution**: Use `.set()` or `.update()` methods
-```typescript
-// Correct
-this.count.set(10);
-this.count.update(val => val + 1);
+Monitor Copilot's changes and verify:
 
-// Incorrect (won't trigger updates)
-this.count() = 10;
-```
+1. **Check `main.ts`** - Uses `bootstrapApplication()` instead of `platformBrowserDynamic()`
+2. **Verify components** - All have `standalone: true`
+3. **Check services** - Use `signal()` instead of `BehaviorSubject`
+4. **Review templates** - Use `@if` and `@for` instead of `*ngIf` and `*ngFor`
 
-## 🎓 Key Takeaways
 
-1. **Standalone components** reduce boilerplate and improve tree-shaking
-2. **Signals** provide simpler reactive state than RxJS
-3. **SSR** dramatically improves initial load performance
-4. **Modern control flow** (@if/@for) is more intuitive
-5. **GitHub Copilot** can automate most Angular migrations
 
-## 📚 Additional Resources
 
-- [Angular Update Guide](https://update.angular.io/)
-- [Angular Signals Documentation](https://angular.io/guide/signals)
-- [Standalone Components Guide](https://angular.io/guide/standalone-components)
-- [Angular SSR Guide](https://angular.io/guide/ssr)
+
+
+## 💡 What You Learned
+
+- Creating custom Copilot instructions for project-specific guidance
+- Single-prompt workflow for complex Angular modernization
+- Converting NgModules to standalone architecture  
+- Replacing RxJS BehaviorSubject with signals
+- Modern Angular 18 template syntax (@if, @for)
 
 ## 🚀 Next Steps
 
-Fantastic! You've modernized the Angular dashboard. Now finish strong with:
-
-**[Exercise 4: DevOps & Data Engineering →](exercise-4-devops-data.md)**
-
-Or explore bonus challenges:
-- Add NgRx for complex state management
-- Implement Progressive Web App (PWA) features
-- Add internationalization (i18n)
-- Optimize bundle size with lazy loading
+- **Exercise 4**: DevOps Pipeline Modernization
+- Explore optional: Add PWA features, i18n, or lazy loading
 
 ---
 
-**🎨 Achievement Unlocked: Angular Modernization Wizard!**
+**🎨 Achievement Unlocked: Angular Modernization Expert!**

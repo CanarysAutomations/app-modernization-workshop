@@ -1,0 +1,36 @@
+<div class="tournament-list">
+  <h2>🏆 Active Tournaments</h2>
+
+  <div class="tournaments-grid">
+    <div *ngFor="let tournament of tournaments" 
+         class="tournament-card card"
+         (click)="selectTournament(tournament)">
+      
+      <div class="tournament-header">
+        <h3>{{ tournament.name }}</h3>
+        <span class="badge" [ngClass]="getStatusBadgeClass(tournament.status)">
+          {{ tournament.status }}
+        </span>
+      </div>
+
+      <div class="tournament-details">
+        <p><strong>Game:</strong> {{ tournament.game }}</p>
+        <p><strong>Prize Pool:</strong> ${{ tournament.prizePool | number }}</p>
+        <p><strong>Participants:</strong> {{ tournament.participants }}/{{ tournament.maxParticipants }}</p>
+        <p><strong>Start Date:</strong> {{ tournament.startDate | date:'shortDate' }}</p>
+      </div>
+
+      <div class="tournament-progress">
+        <div class="progress-bar">
+          <div class="progress-fill" 
+               [style.width.%]="(tournament.participants / tournament.maxParticipants) * 100">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="tournaments.length === 0" class="empty-state">
+    <p>No tournaments available. Check back soon!</p>
+  </div>
+</div>
