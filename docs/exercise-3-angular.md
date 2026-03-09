@@ -150,7 +150,7 @@ Monitor Copilot's changes and verify:
 ## 🚀 Next Steps
 
 - **Exercise 4**: DevOps Pipeline Modernization
-**[Exercise 4: DevOps Pipeline Modernization →](exercise-4-devops.md)**
+**[Exercise 4: DevOps Pipeline Modernization →](exercise-4-devops-data.md)**
 
 ---
 
