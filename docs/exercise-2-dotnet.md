@@ -105,7 +105,7 @@ code .
 Using Skill #file:dotnet-modernizer  Modernize this .NET Framework 4.8 Player Stats API to .NET 8 with modern minimal APIs, Entity Framework Core 8, file-scoped namespaces, nullable reference types, and async/await patterns. Include build validation, test execution, and CVE checking.
 ```
 
-### Step 4: Verify Results (12 minutes)
+### Step 4: Expected Output (12 minutes)
 
 The skill will automatically execute assessment, migration, and validation. Monitor the progress in Copilot Chat and verify:
 
@@ -127,3 +127,4 @@ The skill will automatically execute assessment, migration, and validation. Moni
 ## 🚀 Next Steps
 
 - **Exercise 3**: Angular Frontend Modernization
+**[Exercise 3: Angular Frontend Modernization →](exercise-3-angular.md)**

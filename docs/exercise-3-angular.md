@@ -125,7 +125,7 @@ cd legacy-code/angular-dashboard
 npm install
 ```
 
-### Step 4: Verify Results (10 minutes)
+### Step 4: Expected Output (10 minutes)
 
 Monitor Copilot's changes and verify:
 
@@ -150,7 +150,7 @@ Monitor Copilot's changes and verify:
 ## 🚀 Next Steps
 
 - **Exercise 4**: DevOps Pipeline Modernization
-- Explore optional: Add PWA features, i18n, or lazy loading
+**[Exercise 4: DevOps Pipeline Modernization →](exercise-4-devops.md)**
 
 ---
 

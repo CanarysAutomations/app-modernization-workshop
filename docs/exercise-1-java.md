@@ -105,23 +105,6 @@ Copilot automatically transforms:
 - Controllers/Services/Repositories → Reactive (`Flux`/`Mono`)
 - `JpaRepository` → `ReactiveCrudRepository`
 
-**Quick Verification:**
-
-```bash
-# Compile and test
-mvn clean test
-
-# Verify reactive patterns
-grep -r "Mono\|Flux" src/main/java/
-
-# Run application
-mvn spring-boot:run
-
-# Test endpoint
-curl http://localhost:8080/api/tournaments
-```
-
-
 
 ## Key Takeaways
 

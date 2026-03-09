@@ -129,19 +129,6 @@ The agent executes these MCP tools in sequence:
 
 ---
 
-
-### Verify Build & Tests Pass
-
-```bash
-# Full build
-mvn clean install
-
-# All tests should pass
-mvn test
-```
-
----
-
 ## Expected Output
 
 **CVE Scan**: Lists vulnerabilities with severity (Critical, High, Medium, Low)  
