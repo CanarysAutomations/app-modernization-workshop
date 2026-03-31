@@ -21,9 +21,10 @@ By the end of this 2-hour workshop, you will:
 
 ### Required Tools
 - **Visual Studio Code** (latest version)
-- **GitHub Copilot** subscription (individual, business, or enterprise)
+- **GitHub Copilot** subscription (individual, business, or enterprise (excercise 4))
 - **Git** (v2.40+)
 - **Docker Desktop** (for containerization exercises)
+- **Copilot CLI**
 
 ### Required VS Code Extensions
 - **GitHub Copilot Chat** (`GitHub.copilot-chat`)
