@@ -12,10 +12,10 @@ As a newly hired **Cloud Modernization Engineer** at Game Arena Legends, your mi
 
 By the end of this 2-hour workshop, you will:
 
--  Master GitHub Copilot agents (GitHub Copilot Agent, custom agents) for app modernization
+-  Master GitHub Copilot customization (GitHub Copilot Agent, custom agents, custom instructions, skills) for app modernization
 -  Modernize legacy Java, .NET, Angular, and DevOps/Data pipelines
--  Apply best practices for code refactoring, testing, and deployment
--  Learn migration patterns from monoliths to microservices
+ testing, and deployment
+
 
 ##  Prerequisites
 

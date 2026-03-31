@@ -69,11 +69,11 @@ curl http://localhost:8080/api/tournaments
    - **GPT-4** for comprehensive analysis (recommended for assessment)
    - **Claude 4.5 Sonnet** for alternative perspective
 
-3. **Use Copilot Chat local agent for Assessment:**
+3. **Use Copilot Chat local agent - ask agent for Assessment:**
 
    Open Copilot Chat (`Ctrl+Alt+I` or `Cmd+Alt+I`) and ask:
    ```
-   @workspace Analyze this Spring Boot project. What version is it using? What needs to be upgraded for Spring Boot 3.2? Identify deprecated dependencies and breaking changes.
+   Analyze this Spring Boot project. What version is it using? What needs to be upgraded for Spring Boot 3.2? Identify deprecated dependencies and breaking changes.
    ```
 
    The analysis will cover:
