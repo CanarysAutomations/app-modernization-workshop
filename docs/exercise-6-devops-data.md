@@ -1,4 +1,4 @@
-# Exercise 6: DevOps & Data Engineering Pipeline with Custom Skill ⚙️📊
+﻿# Exercise 6: DevOps & Data Engineering Pipeline with Custom Skill 
 
 **Duration**: 20 minutes  
 **Difficulty**: ⭐⭐⭐⭐ Advanced  
@@ -121,7 +121,7 @@ The skill will automatically generate:
 
 
 
-## 💡 What You Learned
+##  What You Learned
 
 - Creating custom DevOps skills with domain expertise
 - Single-prompt workflow for multi-file infrastructure generation
@@ -131,7 +131,7 @@ The skill will automatically generate:
 
 ---
 
-**⚙️ Achievement Unlocked: DevOps & Data Engineering Expert!**
+** Achievement Unlocked: DevOps & Data Engineering Expert!**
 
 Congratulations! You've completed all 6 exercises and modernized the entire Game Arena Legends platform using different Copilot patterns:
 

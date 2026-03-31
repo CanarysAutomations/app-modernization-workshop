@@ -1,4 +1,4 @@
-# Exercise 5: Angular Tournament Dashboard Modernization 🎨
+﻿# Exercise 5: Angular Tournament Dashboard Modernization 
 
 **Duration**: 20 minutes  
 **Difficulty**: ⭐⭐ Intermediate  
@@ -139,7 +139,7 @@ Monitor Copilot's changes and verify:
 
 
 
-## 💡 What You Learned
+##  What You Learned
 
 - Creating custom Copilot instructions for project-specific guidance
 - Single-prompt workflow for complex Angular modernization
@@ -147,11 +147,11 @@ Monitor Copilot's changes and verify:
 - Replacing RxJS BehaviorSubject with signals
 - Modern Angular 18 template syntax (@if, @for)
 
-## 🚀 Next Steps
+##  Next Steps
 
 - **Exercise 6**: DevOps Pipeline Modernization
 **[Exercise 6: DevOps Pipeline Modernization →](exercise-6-devops-data.md)**
 
 ---
 
-**🎨 Achievement Unlocked: Angular Modernization Expert!**
+** Achievement Unlocked: Angular Modernization Expert!**

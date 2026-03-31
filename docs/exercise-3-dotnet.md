@@ -1,10 +1,10 @@
-# Exercise 3: .NET Player Stats API Modernization with Custom Skill 🚀
+﻿# Exercise 3: .NET Player Stats API Modernization with Custom Skill 
 
 **Duration**: 20 minutes  
 **Difficulty**: ⭐⭐ Easy  
 **Prerequisites**: VS Code, GitHub Copilot extension with app modernization tools enabled, .NET 8 SDK installed
 
-## 🎮 The Challenge
+##  The Challenge
 
 The **Player Stats API** tracks player performance, rankings, match history, and achievements across all Game Arena Legends tournaments. Built with **.NET Framework 4.8**, it's struggling to keep up:
 
@@ -16,7 +16,7 @@ The **Player Stats API** tracks player performance, rankings, match history, and
 
 Your mission: **Create a custom .NET Modernization skill, then use it to automatically migrate to .NET 8 with a single prompt.**
 
-## 📋 Prerequisites Check
+##  Prerequisites Check
 
 Install Github Copilot app modernization for dotnet.
 ![App Modernization Extension](Assets/dotnetappmodern.png)
@@ -28,7 +28,7 @@ Check these tools are available (✓ indicates enabled) from configure tools:
 
 ![App Modernization Tools](Assets/dotnettools.png)
 
-## 🚀 Four-Step Modernization
+##  Four-Step Modernization
 
 ### Step 1: Create .NET Modernization Skill (5 minutes)
 
@@ -109,22 +109,22 @@ Using Skill #file:dotnet-modernizer  Modernize this .NET Framework 4.8 Player St
 
 The skill will automatically execute assessment, migration, and validation. Monitor the progress in Copilot Chat and verify:
 
-- ✅ Assessment report shows migration plan
-- ✅ Code changes applied (models, DbContext, Program.cs, appsettings.json)
-- ✅ Build output: zero compilation errors
-- ✅ Test output: all tests passing
-- ✅ CVE scan: no critical vulnerabilities
+-  Assessment report shows migration plan
+-  Code changes applied (models, DbContext, Program.cs, appsettings.json)
+-  Build output: zero compilation errors
+-  Test output: all tests passing
+-  CVE scan: no critical vulnerabilities
 
 
 
-## 💡 What You Learned
+##  What You Learned
 
 - Creating custom Copilot skills with YAML frontmatter
 - Using app modernization tools via skills
 - Single-prompt workflow for complex migrations
 - Automated assessment, migration, and validation
 
-## 🚀 Next Steps
+##  Next Steps
 
 - **Exercise 4**: .NET API Modernization with Coding Agent (Optional)
 **[Exercise 4: .NET API Modernization with Coding Agent →](exercise-4-dotnet.md)**

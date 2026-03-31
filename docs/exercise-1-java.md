@@ -1,4 +1,4 @@
-# Exercise 1: Java Tournament Service Modernization 
+﻿# Exercise 1: Java Tournament Service Modernization 
 
 **Duration**: 30 minutes  
 **Difficulty**: ⭐⭐⭐ Intermediate  

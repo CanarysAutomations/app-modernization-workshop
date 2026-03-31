@@ -1,4 +1,4 @@
-# Exercise 2: CVE Detection & Security Hardening with CLI 🛡️ (Optional)
+﻿# Exercise 2: CVE Detection & Security Hardening with CLI  (Optional)
 
 **Duration**: 25 minutes  
 **Difficulty**: ⭐⭐⭐⭐ Advanced  
