@@ -1,4 +1,4 @@
-# Exercise 1.1: CVE Detection & Security Hardening with CLI 🛡️ (Optional)
+# Exercise 2: CVE Detection & Security Hardening with CLI 🛡️ (Optional)
 
 **Duration**: 25 minutes  
 **Difficulty**: ⭐⭐⭐⭐ Advanced  
@@ -162,7 +162,7 @@ The agent executes these MCP tools in sequence:
 
 **Continue the workshop:**
 
-**[Exercise 2: .NET Framework Modernization →](exercise-2-dotnet.md)**
+**[Exercise 3: .NET Framework Modernization →](exercise-3-dotnet.md)**
 - Migrate .NET Framework 4.8 → .NET 8
 - Convert Web API to minimal APIs
 - Update Entity Framework → EF Core

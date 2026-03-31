@@ -1,4 +1,4 @@
-# Exercise 3: Angular Tournament Dashboard Modernization 🎨
+# Exercise 5: Angular Tournament Dashboard Modernization 🎨
 
 **Duration**: 20 minutes  
 **Difficulty**: ⭐⭐ Intermediate  
@@ -149,8 +149,8 @@ Monitor Copilot's changes and verify:
 
 ## 🚀 Next Steps
 
-- **Exercise 4**: DevOps Pipeline Modernization
-**[Exercise 4: DevOps Pipeline Modernization →](exercise-4-devops-data.md)**
+- **Exercise 6**: DevOps Pipeline Modernization
+**[Exercise 6: DevOps Pipeline Modernization →](exercise-6-devops-data.md)**
 
 ---
 

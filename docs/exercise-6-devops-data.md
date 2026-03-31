@@ -1,4 +1,4 @@
-# Exercise 4: DevOps & Data Engineering Pipeline with Custom Skill ⚙️📊
+# Exercise 6: DevOps & Data Engineering Pipeline with Custom Skill ⚙️📊
 
 **Duration**: 20 minutes  
 **Difficulty**: ⭐⭐⭐⭐ Advanced  
@@ -16,7 +16,7 @@ Verify you have:
 - Docker Desktop installed and running
 - Python 3.11+ installed
 - GitHub account with Actions enabled
-- All three services from Exercises 1-3 completed
+- All three services from Exercises 1, 3, and 5 completed
 
 ```bash
 docker --version
@@ -133,7 +133,7 @@ The skill will automatically generate:
 
 **⚙️ Achievement Unlocked: DevOps & Data Engineering Expert!**
 
-Congratulations! You've completed all 4 exercises and modernized the entire Game Arena Legends platform using different Copilot patterns:
+Congratulations! You've completed all 6 exercises and modernized the entire Game Arena Legends platform using different Copilot patterns:
 
 
 **[← Back to Workshop Home](../README.md)**

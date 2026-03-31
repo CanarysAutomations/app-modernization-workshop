@@ -1,4 +1,4 @@
-# Exercise 2: .NET Player Stats API Modernization with Custom Skill 🚀
+# Exercise 3: .NET Player Stats API Modernization with Custom Skill 🚀
 
 **Duration**: 20 minutes  
 **Difficulty**: ⭐⭐ Easy  
@@ -126,5 +126,8 @@ The skill will automatically execute assessment, migration, and validation. Moni
 
 ## 🚀 Next Steps
 
-- **Exercise 3**: Angular Frontend Modernization
-**[Exercise 3: Angular Frontend Modernization →](exercise-3-angular.md)**
+- **Exercise 4**: .NET API Modernization with Coding Agent (Optional)
+**[Exercise 4: .NET API Modernization with Coding Agent →](exercise-4-dotnet.md)**
+
+- **Exercise 5**: Angular Frontend Modernization
+**[Exercise 5: Angular Frontend Modernization →](exercise-5-angular.md)**

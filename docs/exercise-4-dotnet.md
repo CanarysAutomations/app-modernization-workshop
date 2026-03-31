@@ -1,9 +1,9 @@
-# Exercise 2.1: .NET Player Stats API Modernization with GitHub Coding Agent ⚡ (Optional)
+# Exercise 4: .NET Player Stats API Modernization with GitHub Coding Agent ⚡ (Optional)
 
 **Duration**: 25 minutes  
 **Difficulty**: ⭐⭐⭐⭐ Advanced  
 **Prerequisites**: GitHub Enterprise with MCP Server access, Repository admin access, GitHub Copilot Pro+
-**Note**: This is an advanced optional exercise using GitHub Copilot Coding Agent. Complete Exercise 2 first for the foundational local agent approach.
+**Note**: This is an advanced optional exercise using GitHub Copilot Coding Agent. Complete Exercise 3 first for the foundational local agent approach.
 
 ## 🎮 The Challenge
 
@@ -433,7 +433,7 @@ dotnet publish -c Release
 
 Awesome work! You've modernized the Player Stats API using autonomous agents. Now move on to:
 
-**[Exercise 3: Angular Frontend Modernization →](exercise-3-angular.md)**
+**[Exercise 5: Angular Frontend Modernization →](exercise-5-angular.md)**
 
 Or explore bonus challenges:
 - Configure agent to add JWT authentication

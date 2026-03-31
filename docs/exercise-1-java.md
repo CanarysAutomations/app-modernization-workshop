@@ -125,7 +125,7 @@ Reactive patterns: Flux (0..N), Mono (0..1) for non-blocking I/O
 Congratulations! You've modernized the Tournament Service. 
 
 
-**[Exercise 1.1: CVE Detection & Security Hardening →](exercise-1.1-java-cli.md)**
+**[Exercise 2: CVE Detection & Security Hardening →](exercise-2-java-cli.md)**
 - Learn Copilot CLI automation with custom agents
 - Detect and fix CVEs using MCP server tools
 - Generate security tests with AI
