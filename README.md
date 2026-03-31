@@ -1,23 +1,23 @@
-# 🏆 Game Arena Legends - App Modernization Workshop
+﻿#  Game Arena Legends - App Modernization Workshop
 
 ![Workshop Banner](https://img.shields.io/badge/Duration-2%20Hours-blue) ![Difficulty](https://img.shields.io/badge/Level-Intermediate-orange) ![GitHub Copilot](https://img.shields.io/badge/GitHub%20Copilot-Enabled-green)
 
-## 📖 The Story
+##  The Story
 
 Welcome to **Game Arena Legends**, the world's premier esports tournament management platform! Founded in 2010, our platform has been managing tournaments for games like League of Legends, Dota 2, CS:GO, and Valorant. However, our legacy codebase is holding us back from delivering the next-generation features our players and tournament organizers demand.
 
 As a newly hired **Cloud Modernization Engineer** at Game Arena Legends, your mission is to modernize our legacy systems across multiple technology stacks. The championship season is approaching, and we need to ensure our platform can handle millions of concurrent users while providing real-time analytics and a seamless user experience.
 
-## 🎯 Workshop Objectives
+##  Workshop Objectives
 
 By the end of this 2-hour workshop, you will:
 
-- ✅ Master GitHub Copilot agents (GitHub Copilot Agent, custom agents) for app modernization
-- ✅ Modernize legacy Java, .NET, Angular, and DevOps/Data pipelines
-- ✅ Apply best practices for code refactoring, testing, and deployment
-- ✅ Learn migration patterns from monoliths to microservices
+-  Master GitHub Copilot agents (GitHub Copilot Agent, custom agents) for app modernization
+-  Modernize legacy Java, .NET, Angular, and DevOps/Data pipelines
+-  Apply best practices for code refactoring, testing, and deployment
+-  Learn migration patterns from monoliths to microservices
 
-## 🛠️ Prerequisites
+##  Prerequisites
 
 ### Required Tools
 - **Visual Studio Code** (latest version)
@@ -37,7 +37,7 @@ By the end of this 2-hour workshop, you will:
 - **Angular**: Node.js 20+ and npm 10+
 - **Python**: Python 3.11+ (for data engineering exercise)
 
-## 📚 Workshop Exercises
+##  Workshop Exercises
 
 | # | Exercise | Duration | Difficulty | Learning Path | What You'll Learn |
 |---|----------|----------|------------|---------------|-------------------|
@@ -50,7 +50,7 @@ By the end of this 2-hour workshop, you will:
 
 
 
-## 📖 Additional Resources
+##  Additional Resources
 
 - [GitHub Copilot Documentation](https://docs.github.com/en/copilot)
 - [App Modernization with GitHub Copilot](https://docs.github.com/en/copilot/tutorials/modernize-java-applications)
@@ -60,5 +60,5 @@ By the end of this 2-hour workshop, you will:
 
 ---
 
-**Ready to modernize Game Arena Legends?** [Start with Exercise 1](./docs/exercise-1-java.md) or pick any exercise above! 🚀
+**Ready to modernize Game Arena Legends?** [Start with Exercise 1](./docs/exercise-1-java.md) or pick any exercise above! 
 
